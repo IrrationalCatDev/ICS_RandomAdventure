@@ -1,0 +1,12 @@
+{
+    "All":[
+        {
+            "Name": "Dragon",
+            "Alignments": ["Fire","Natural"]
+        },
+        {
+            "Name": "Pixie",
+            "Alignments": ["Fae","Arcane"]
+        }
+    ]
+}

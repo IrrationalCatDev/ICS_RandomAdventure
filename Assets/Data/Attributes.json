@@ -1,0 +1,24 @@
+{
+    "All":[
+        {
+            "Name": "Health",
+            "min": 10,
+            "max": 100
+        },
+        {
+            "Name": "Stamina",
+            "min": 10,
+            "max": 100
+        },
+        {
+            "Name": "Strength",
+            "min": 1,
+            "max": 10
+        },
+        {
+            "Name": "Vitality",
+            "min": 1,
+            "max": 10
+        }
+    ]
+}

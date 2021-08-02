@@ -1,0 +1,12 @@
+{
+    "All":[
+        {
+            "Name": "Warrior",
+            "Alignments": ["Natural","Steel"]
+        },
+        {
+            "Name": "Rogue",
+            "Alignments": ["Dark","Poison"]
+        }
+    ]
+}
