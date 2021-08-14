@@ -9,39 +9,39 @@ public abstract class GeneratedEntity : MonoBehaviour
     {
         var a = Instantiate(prefab) as GameObject;
         var entity = a.GetComponent<GeneratedEntity>();
-        entity.Initialize(level);
+        entity.Level = level;
+        entity.Initialize();
         a.transform.parent = parent.transform;
     }
 
-    public void Initialize(int level)
+    public void Initialize()
     {
         Class = GenerateClass();
         //load possible attributes
         var possibleAttributes = AttributesManager.Instance.RequestAttributes();
+        //filter attributes based on class/level/alignment etc.
+        var filteredAttributes = possibleAttributes.FindAll(x => x.IsValidForEntity(this));
         //generate value for attribute
-        for (int i = 0; i < possibleAttributes.Count; ++i)
+        foreach (var possibleAttribute in filteredAttributes)
         {
-            //filter attributes based on class/level/alignment etc.
-            Attribute newAttribute = new Attribute();
-            newAttribute.Convert(possibleAttributes[i],level);
-            Attributes.Insert(Attributes.Count,newAttribute);
+            var level = Level;
+            var stat = possibleAttribute.Calculate(level);
+            Attributes.Insert(Attributes.Count,stat);
         }
-
     }
 
-    public abstract string GetClassFile();
+    public abstract string GetEntityType();
 
     public EntityClass GenerateClass()
     {
-        StreamReader reader = new StreamReader(GetClassFile());
-        string json = reader.ReadToEnd();
-        var allClasses = JsonUtility.FromJson<EntityClasses>(json);
-        return allClasses.All[Random.Range(0,allClasses.All.Count)];
+        return new EntityClass();
     }
 
     public EntityClass Class;
 
-    public List<Attribute> Attributes;
+    public List<Stat> Attributes = new List<Stat>();
+
+    public int Level;
 
 
 }

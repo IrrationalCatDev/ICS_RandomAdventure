@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Adventurer : GeneratedEntity 
 {
-    public override string GetClassFile()
+    public override string GetEntityType()
     {
-        return "Assets/Data/AdventurerClasses.json";
+        return "Adventurer";
     }
+
 }

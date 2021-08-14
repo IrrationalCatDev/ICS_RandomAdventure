@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Enemy : GeneratedEntity 
 {
-    public override string GetClassFile()
+    public override string GetEntityType()
     {
-        return "Assets/Data/EnemyClasses.json";
+        return "Enemy";
     }
 
 }

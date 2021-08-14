@@ -5,9 +5,8 @@ using System.IO;
 
 public class AttributesManager : MonoBehaviour
 {
-    private Attributes LoadedAttributes;
+    public List<AttributeBase> Attributes;
     private static AttributesManager _instance;
-    public string FilePath = "Assets/Data/Attributes.json";
 
     public static AttributesManager Instance
     {
@@ -26,20 +25,9 @@ public class AttributesManager : MonoBehaviour
         }
     }
 
-    private void LoadAttributes()
-    {
-        StreamReader reader = new StreamReader(FilePath);
-        string json = reader.ReadToEnd();
-        LoadedAttributes = JsonUtility.FromJson<Attributes>(json);
-    }
-
     public List<AttributeBase> RequestAttributes()
     {
-        if (LoadedAttributes == null)
-        {
-            LoadAttributes();
-        }
-        return LoadedAttributes.All;
+        return Attributes;
     }
 
 

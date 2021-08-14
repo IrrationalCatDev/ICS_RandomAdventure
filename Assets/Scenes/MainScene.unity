@@ -149,10 +149,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 267552627}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc7a4aa43dc3cc6498012abcea8d65fc, type: 3}
+  m_Script: {fileID: 11500000, guid: bbc4f05624aa8c94b957f0a46ed4f170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FilePath: Assets/Data/Attributes.json
+  Attributes:
+  - {fileID: 11400000, guid: d219e226c9fe45b4f98aa1d0b404c9fe, type: 2}
+  - {fileID: 11400000, guid: 333a333b0f68ff04f936d7bb7fe24bb7, type: 2}
+  - {fileID: 11400000, guid: ea433f3121b1d0a429a7f2531a0d2b1a, type: 2}
+  - {fileID: 11400000, guid: 204ca2cc2020aba499d094d692b2e499, type: 2}
+  - {fileID: 11400000, guid: 146a96995254a444b80fd926418a3513, type: 2}
 --- !u!4 &267552629
 Transform:
   m_ObjectHideFlags: 0
